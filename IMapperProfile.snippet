@@ -1,0 +1,38 @@
+    <?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Fluent Validation Snippet</Title>
+            <Author>João Luiz</Author>
+            <Description>Fluent Validation Snippet</Description>
+            <Shortcut>fval</Shortcut>
+        </Header>
+        <Snippet>
+            <Imports>
+                <Import>
+                    <Namespace>FluentValidation</Namespace>
+                </Import>
+            </Imports>
+            <Code Language="CSharp">
+                <![CDATA[
+public class $Entity$Profile : Profile
+{
+    public $Entity$Profile()
+    {
+        CreateMap<$Entity$Request, $Entity$Table>()
+            .ForMember(x => x.id, y => y.Ignore());
+    }
+}
+                ]]>
+            </Code>
+            <Declarations>
+              <Literal>
+                <ID>Entity</ID>
+                <Default>Person</Default>
+                <ToolTip>Entity name</ToolTip>
+              </Literal>
+            </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
