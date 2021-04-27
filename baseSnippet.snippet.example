@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>CreateMediatRCommand</Title>
+            <Author>João Luiz</Author>
+            <Description>Create MediatR Handler</Description>
+            <Shortcut>mh</Shortcut>
+        </Header>
+        <Snippet>
+            <Imports>
+                <Import>
+                    <Namespace>MediatR</Namespace>
+                </Import>
+            </Imports>
+            <Code Language="CSharp">
+                <![CDATA[
+                using MediatR;
+                
+				public class Handler : IRequestHandler<Request>
+				{                    
+					public async Task Handle(Request message)
+					{
+						throw new NotImplementedException();
+					}
+				}]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

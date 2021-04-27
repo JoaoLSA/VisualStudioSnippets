@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Create MediatR Handler</Title>
+            <Author>João Luiz</Author>
+            <Description>Create MediatR Handler for Get All Op</Description>
+            <Shortcut>mhga</Shortcut>
+        </Header>
+        <Snippet>
+            <Imports>
+                <Import>
+                    <Namespace>MediatR</Namespace>
+                    <Namespace>AutoMapper</Namespace>
+                    <Namespace>GDS.Backoffice.Infrastructure.v1.Database;</Namespace>
+                </Import>
+            </Imports>
+            <Code Language="CSharp">
+                <![CDATA[
+public class GetAll$Request$Service : IRequestHandler<GetAll$Request$Request, GetAll$Request$Response>
+{
+private readonly IUnitOfWork _uow;
+private readonly IMapper _mapper;
+
+public GetAll$Request$Service(IUnitOfWork uow, IMapper mapper)
+{
+    _uow = uow;
+    _mapper = mapper;
+}
+  
+  public async Task<GetAll$Request$Response> Handle(GetAll$Request$Request request)
+  {
+    var Id = await _uow.$Request$Repository.Insert(_mapper.Map<$Request$Table>(request));
+
+    var response = _mapper.Map<GetAll$Request$Response>(request);
+    response.id = Id;
+    return response;
+  }
+}
+        ]]>
+            </Code>
+            <Declarations>
+              <Literal>
+                <ID>Request</ID>
+                <Default>City</Default>
+                <ToolTip>Request name</ToolTip>
+              </Literal>
+            </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

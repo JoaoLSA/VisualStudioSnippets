@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Create MediatR Request</Title>
+            <Author>João Luiz</Author>
+            <Description>Create MediatR Request</Description>
+            <Shortcut>mreq</Shortcut>
+        </Header>
+        <Snippet>
+            <Imports>
+                <Import>
+                    <Namespace>MediatR</Namespace>
+                </Import>
+            </Imports>
+            <Code Language="CSharp">
+                <![CDATA[
+public class $Request$Request: IRequest<$Request$Response>
+{
+}
+                ]]>
+            </Code>
+            <Declarations>
+              <Literal>
+                <ID>Request</ID>
+                <Default>CreatePerson</Default>
+                <ToolTip>Request name</ToolTip>
+              </Literal>
+            </Declarations>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
