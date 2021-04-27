@@ -20,6 +20,7 @@ public class $Entity$RequestValidator : AbstractValidator<$Entity$Request>
 {
     public $Entity$RequestValidator()
     {
+        RuleFor(x => x.Id).GreaterThan(0);
         RuleFor(x => x.Name).NotEmpty();
     }
 }
